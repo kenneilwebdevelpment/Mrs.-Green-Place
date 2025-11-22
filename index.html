@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Mrs. Green Place</title>
+>
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<header>
+ <div class="brand">
+    <div class="brand-content">
+        <img src="images/logo.png" alt="Mrs. Green Place Logo" class="brand-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/4CAF50/FFFFFF?text=L';">
+        <h2>Mrs. Green Place</h2>
+    </div>
+    <a href="menu.html" class="btn">Order Now</a>
+</div>
+ <nav class="nav">
+ <a href="index.html">Home</a>
+ <a href="menu.html">Menu</a>
+<a href="contact.html">Contact</a>
+    <a href="checkout.html">Checkout</a>
+ </nav>
+
+
+    <div class="nav-controls" id="nav-controls">
+        <button class="btn" style="background-color: var(--primary-color); color: white; margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('login-modal')">Login</button>
+        <button class="btn" style="margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('signup-modal')">Sign Up</button>
+        <button class="btn btn-cart" onclick="openModal('cart-modal')">
+            &#128722 Cart
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </div>
+<h1>Welcome to Mrs. Green Place</h1>
+</header>
+
+
+<main>
+    <section class="slideshow-section" id="home-slideshow-section">
+        <h2>Featured Dishes</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="https://media.istockphoto.com/id/1166171010/photo/spicy-grilled-jerk-chicken-on-a-plate.jpg?s=1024x1024&w=is&k=20&c=7m1kkPf2w2favA-MrwLrHAQ1JSzI0v9fW6ZfPpG-ReA=" alt="Jerk Chicken" onerror="this.onerror=null;this.src='https://placehold.co/1024x500/388E3C/FFFFFF?text=Jerk+Chicken';" />
+                <div class="caption">Taste the best Jerk Chicken in town!</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="https://media.istockphoto.com/id/1161112896/photo/jamaican-curried-goat-u2013-slow-cooked-jamaican-spiced-goat-curry.jpg?s=1024x1024&w=is&k=20&c=lpE1sYpASf7JZdN40rKFo52ly2-UcZjp_Md2hi02ATE=" alt="Curried Goat" onerror="this.onerror=null;this.src='https://placehold.co/1024x500/4CAF50/FFFFFF?text=Curried+Goat';" />
+                <div class="caption">Authentic Curried Goat, a Jamaican classic.</div>
+            </div>
+            <div class="mySlides fade">
+           <img src="asset/fish.jpg" alt="Escovitch Fish"  />            
+           <div class="caption">Freshly caught Escovitch Fish.</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)" aria-label="Next Slide">&#10095;</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+     
+            <h1>About Us</h1>
+            <p>Mrs. Green Place is dedicated to providing an unforgettable dining experience. Our chefs are well-versed in Jamaican culinary practices, ready to serve flavors that will delight your senses.</p>
+            <p>Whether it's a date, a family dinner, or a casual outing, we ensure an experience that leaves you satisfied and coming back for more.</p>
+            
+              <h2>mission statment</h2>
+              <P>We are committed to providing satisfactory meals to our customers.</P>
+
+                <h2>vision statment</h2>
+              <P>To become a worldwide establishment that is they to soth ther custmesrs' palate/P>
+
+            <hr style="margin: 20px 0; border-color: #eee;">
+            <h2>Assignment Details</h2>
+            <p><strong>Full Name:</strong> kenneil lewis</p>
+            <p><strong>ID#:</strong> 2403248</p>
+            <p><strong>Module:</strong> Web Programming (IA#2)</p>
+            <p><strong>Class Time:</strong> thursday 6:00pm-8:00pm</p>
+            <p><strong>Customer Queries:</strong> <a href="mailto:kenneillewis72@gmail.com" aria-label="Send email to the company">Send us a message!</a></p>
+        </section>
+    </main>
+<footer>
+© 2025 Mrs. Green Place — All Rights Reserved
+</footer>
+   
+
+
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Log In</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="#" onclick="closeModal('login-modal'); openModal('signup-modal'); return false;">Sign Up</a></p>
+        </div>
+    </div>
+
+
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <span class="error-message" id="fullname-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth (DOB):</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message" id="dob-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message" id="confirmPassword-error"></span>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="cart-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items-container">
+           
+            </div>
+            <div id="cart-totals-container">
+           
+            </div>
+        </div>
+    </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Checkout - Mrs. Green Place</title>
+
+
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+ <header>
+ <div class="brand">
+    <div class="brand-content">
+        <img src="images/logo.png" alt="Mrs. Green Place Logo" class="brand-logo" onerror="this.onerror=null;this.src='https://placehold.co/40x40/4CAF50/FFFFFF?text=L';">
+        <h2>Mrs. Green Place</h2>
+    </div>
+ </div>
+<nav class="nav">
+<a href="index.html">Home</a>
+ <a href="menu.html">Menu</a>
+ <a href="contact.html">Contact</a>
+ <a href="checkout.html">Checkout</a>
+ </nav>
+    <div class="nav-controls" id="nav-controls">
+        <button class="btn" style="background-color: var(--primary-color); color: white; margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('login-modal')">Login</button>
+        <button class="btn" style="margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('signup-modal')">Sign Up</button>
+        <button class="btn btn-cart" onclick="openModal('cart-modal')">
+            &#128722 Cart
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </div>
+<h1>Checkout</h1>
+</header>
+
+
+<main>
+ 
+    <section id="checkout-summary">
+        <h2>Order Summary</h2>
+        <div id="checkout-cart-summary">
+            <p>Loading cart summary...</p>
+        </div>
+        <div id="checkout-totals">
+       
+        </div>
+    </section>
+
+
+   
+    <section id="shipping-details">
+        <h2>Order Information</h2>
+        <form id="checkout-form">
+            
+            <div class="form-group">
+                <label for="shippingName">Full Name:</label>
+                <input type="text" id="shippingName" name="shippingName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{7,15}" required placeholder="e.g., 8761234567">
+            </div>
+            
+            <div class="form-group">
+                <label for="deliveryMethod">Delivery Method:</label>
+                <select id="deliveryMethod" name="deliveryMethod" required>
+                    <option value="delivery">Delivery</option>
+                    <option value="pickup">Pickup (Collect from Store)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="shippingAddress">Delivery Address:</label>
+                <input type="text" id="shippingAddress" name="shippingAddress" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="specialInstructions">Special Instructions (optional):</label>
+                <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="e.g., Extra spicy, no onions, leave package by door."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="paymentAmount">Amount Being Paid (JMD):</label>
+                <input type="number" id="paymentAmount" name="paymentAmount" required min="0.01" step="any" placeholder="Enter amount >= Grand Total">
+            </div>
+
+
+ 
+            <div class="checkout-buttons">
+
+
+                <button type="button" class="btn" onclick="window.location.href='menu.html'" style="background-color: #f44336;">Cancel</button>
+                <button type="submit" class="btn">Confirm Order</button>
+            </div>
+        </form>
+    </section>
+  </main>
+
+
+<footer>© 2025 Mrs. Green Place — All Rights Reserved</footer>
+   
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Log In</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="#" onclick="closeModal('login-modal'); openModal('signup-modal'); return false;">Sign Up</a></p>
+        </div>
+    </div>
+
+
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <span class="error-message" id="fullname-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth (DOB):</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message" id="dob-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message" id="confirmPassword-error"></span>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="cart-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Order Confirmation</h2>
+     
+            <div id="cart-items-container"></div>
+            <div id="cart-totals-container"></div>
+        </div>
+    </div>
+
+
+ 
+    <script src="script.js"></script>
+<script>
+       
+    </script>
+</body>
+</html>

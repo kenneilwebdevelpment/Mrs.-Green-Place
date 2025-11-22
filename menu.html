@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Menu - Mrs. Green Place</title>
+
+
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<header>
+ <div class="brand">
+    <h2>Mrs. Green Place</h2>
+   </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+       <a href="checkout.html">Checkout</a>
+ </nav>
+
+
+    <div class="nav-controls" id="nav-controls">
+        <button class="btn" style="background-color: var(--primary-color); color: white; margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('login-modal')">Login</button>
+        <button class="btn" style="margin-top: 0; padding: 0.75rem 1.2rem;" onclick="openModal('signup-modal')">Sign Up</button>
+        <button class="btn btn-cart" onclick="openModal('cart-modal')">
+            &#128722 Cart
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+    </div>
+ <h1>Our Menu</h1>
+ </header>
+
+
+  <main>
+    <section class="slideshow-section">
+        <h2>Weekly Specials</h2>
+        <div class="slideshow-container">
+
+
+            <div class="mySlides fade">
+                <img src="https://media.istockphoto.com/id/1166171010/photo/spicy-grilled-jerk-chicken-on-a-plate.jpg?s=1024x1024&w=is&k=20&c=7m1kkPf2w2favA-MrwLrHAQ1JSzI0v9fW6ZfPpG-ReA=" alt="Jerk Chicken with Rice & Peas - Weekly Special" onerror="this.onerror=null;this.src='https://placehold.co/1024x500/4CAF50/FFFFFF?text=Jerk+Chicken';" />
+                <div class="caption">Jerk Chicken with Rice & Peas</div>
+            </div>
+            <div class="mySlides fade">
+            <img src="asset/jerk and rice.jpg" alt="Jerk Chicken" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4CAF50/FFFFFF?text=Jerk+Chicken';" />
+                <div class="caption">Jerk Chicken Legs</div>
+            </div>
+            <div class="mySlides fade">
+            <img src="asset/curry goat.jpg" alt="Curried Goat" onerror="this.onerror=null;this.src='https://placehold.co/300x200/388E3C/FFFFFF?text=Curried+Goat';" />
+
+                <div class="caption">Curried Goat</div>
+            </div>
+
+
+            <a class="prev" onclick="plusSlides(-1)" aria-label="Previous Slide">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)" aria-label="Next Slide">&#10095;</a>
+        </div>
+    </section>
+
+
+    <section class="products-section">
+        <h2>Full Menu</h2>
+   
+        <div class="menu-grid">
+           
+            <div class="product-card" data-product-id="1">
+                <img src="asset/jerk and rice.jpg" alt="Jerk Chicken" onerror="this.onerror=null;this.src='https://placehold.co/300x200/4CAF50/FFFFFF?text=Jerk+Chicken';" />
+                <div class="product-details">
+                    <h3>Jerk Chicken</h3>
+                    <p>Spicy grilled jerk chicken served with rice and peas.</p>
+                    <span class="price">Price: $950.00 (Medium)</span>
+                    
+                    <form class="add-to-cart-form">
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                             <label for="size-1" style="display: block; font-weight: bold; margin-bottom: 0.2rem;">Choose Size:</label>
+                             <select id="size-1" name="product-size" required style="padding: 0.5rem; border-radius: 5px; width: 100%;">
+                                <option value="Medium">Medium ($950.00)</option>
+                                <option value="Small">Small ($760.00)</option>
+                                <option value="Large">Large ($1235.00)</option>
+                             </select>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-product-id="2">
+                <img src="asset/curry goat.jpg" alt="Curried Goat" onerror="this.onerror=null;this.src='https://placehold.co/300x200/388E3C/FFFFFF?text=Curried+Goat';" />
+                <div class="product-details">
+                    <h3>Curried Goat</h3>
+                    <p>Slow-cooked Jamaican curried goat with root vegetables.</p>
+                    <span class="price">Price: $1200.00 (Medium)</span>
+                    
+                    <form class="add-to-cart-form">
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                             <label for="size-2" style="display: block; font-weight: bold; margin-bottom: 0.2rem;">Choose Size:</label>
+                             <select id="size-2" name="product-size" required style="padding: 0.5rem; border-radius: 5px; width: 100%;">
+                                <option value="Medium">Medium ($1200.00)</option>
+                                <option value="Small">Small ( $960.00)</option>
+                                <option value="Large">Large ( $1560.00)</option>
+                             </select>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-product-id="3">
+                <img src="asset/fish.jpg" alt="Escovitch Fish"  />
+                <div class="product-details">
+                    <h3>steam fish</h3>
+                    <p>Fish that is fried with season</p>
+                    <span class="price">Price: $1500.00 (Medium)</span>
+                    
+                    <form class="add-to-cart-form">
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                             <label for="size-3" style="display: block; font-weight: bold; margin-bottom: 0.2rem;">Choose Size:</label>
+                             <select id="size-3" name="product-size" required style="padding: 0.5rem; border-radius: 5px; width: 100%;">
+                                <option value="Medium">Medium ($1500.00)</option>
+                                <option value="Small">Small ($1200.00)</option>
+                                <option value="Large">Large ($1950.00)</option>
+                             </select>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="product-card" data-product-id="4">
+                <img src="asset/ackee.jpg" alt="Ackee and Saltfish"  />
+                <div class="product-details">
+                    <h3>Ackee and Saltfish</h3>
+                    <p>Jamaica's national dish, sautéed with onions and peppers.</p>
+                    <span class="price">Price: $800.00 (Medium)</span>
+                    
+                    <form class="add-to-cart-form">
+                        <div class="form-group" style="margin-bottom: 0.5rem;">
+                             <label for="size-4" style="display: block; font-weight: bold; margin-bottom: 0.2rem;">Choose Size:</label>
+                             <select id="size-4" name="product-size" required style="padding: 0.5rem; border-radius: 5px; width: 100%;">
+                                <option value="Medium">Medium ($800.00)</option>
+                                <option value="Small">Small ( $640.00)</option>
+                                <option value="Large">Large ( $1040.00)</option>
+                             </select>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+  </main>
+
+
+<footer> © 2025 Mrs. Green Place — All Rights Reserved</footer>
+
+
+    <div id="login-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Log In</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">Don't have an account? <a href="#" onclick="closeModal('login-modal'); openModal('signup-modal'); return false;">Sign Up</a></p>
+        </div>
+    </div>
+
+
+    <div id="signup-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    <span class="error-message" id="fullname-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth (DOB):</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message" id="dob-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message" id="confirmPassword-error"></span>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Register</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="cart-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items-container">
+       
+            </div>
+            <div id="cart-totals-container">
+           
+            </div>
+        </div>
+    </div>
+
+
+   <script src="script.js"></script>
+</body>
+</html>
